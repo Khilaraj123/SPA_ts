@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Board</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="navbar">
+            <div class="navbar-brand">
+                Task Board
+            </div>
+            <nav class="nav-links">
+                <a href="/">Dashboard</a>
+                <a href="/tasks">Tasks</a>
+                <a href="/settings">Settings</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section class="hero">
+                <h1>Task Board</h1>
+                <p>Manage your tasks in one place.</p>
+            </section>
+
+            <section class="stats">
+                <article class="stat-card">
+                    <h2>10</h2>
+                    <p>Total Tasks</p>
+                </article>
+
+                <article class="stat-card">
+                    <h2>6</h2>
+                    <p>Completed</p>
+                </article>
+
+                <article class="stat-card">
+                    <h2>4</h2>
+                    <p>Pending</p>
+                </article>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

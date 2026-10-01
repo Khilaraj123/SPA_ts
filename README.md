@@ -1,0 +1,1 @@
+I am trying to learn/relearn frontend fundamentals by building react/angular like single page application using just html, css and type script.
