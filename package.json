@@ -1,0 +1,27 @@
+{
+  "name": "spa_ts",
+  "version": "1.0.0",
+  "description": "I am trying to learn/relearn frontend fundamentals by building react/angular like single page application using just html, css and type script.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khilaraj123/SPA_ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Khilaraj123/SPA_ts/issues"
+  },
+  "homepage": "https://github.com/Khilaraj123/SPA_ts#readme",
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2"
+  }
+}
