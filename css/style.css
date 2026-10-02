@@ -1,13 +1,5 @@
-.task {
-    padding: 16px;
-    margin-top: 10px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
 .link {
-    padding: 20px;
+    display: inline-block;
+    padding: 10px 16px;
     text-decoration: none;
-    color: red;
 }
