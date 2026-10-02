@@ -4,47 +4,39 @@ if (!app) {
     throw new Error("App Element Not Found");
 }
 
-const heading = document.createElement("h1");
-heading.textContent = "My Tasks";
-app.appendChild(heading);
-
-function createTask(title: string): HTMLDivElement {
-    const task = document.createElement("div");
-    task.classList.add("task");
-    const spn = createSpan(title);
-    const dltBtn = createDeleteBtn();
-    task.appendChild(spn);
-    task.appendChild(dltBtn);
-
-    task.addEventListener("click", () => {
-        console.log("TASK");
-    });
-    return task;
+function createInput(type: string, placeholder: string): HTMLInputElement{
+    const input = document.createElement("input");
+    input.type = type;
+    input.placeholder = placeholder;
+    return input;
 }
 
-function createSpan(text: string): HTMLSpanElement {
-    const span = document.createElement("span");
-    span.textContent = text;
-    return span;
+function createAddButton(title: string): HTMLButtonElement{
+    const addBtn = document.createElement("button");
+    addBtn.textContent = title;
+
+    return addBtn;
 }
 
-function createDeleteBtn(): HTMLButtonElement {
-    const btn = document.createElement("button");
-    btn.classList.add("deleteBtn");
-    btn.textContent = "Delete";
+function createForm() : HTMLFormElement{
+    const form = document.createElement("form");
+    const input = createInput("text", "Input Some Thing");
+    const addBtn = createAddButton("Add Tasks");
+    form.appendChild(input);
+    form.appendChild(addBtn);
+    
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-    btn.addEventListener("click", (event) => {
-        console.log("BUTTON");
-        event.stopPropagation();
-    });
-    return btn;
+        console.log(input.value);
+    })
+    return form;
 }
 
-const task1 = createTask("Learn Html");
-const task2 = createTask("Learn Css");
-const task3 = createTask("Learn Type Script");
+function renderForm() {
+    app.innerHTML = "";
+    const form = createForm();
+    app.appendChild(form);
+}
 
-app.appendChild(task1);
-app.appendChild(task2);
-app.appendChild(task3);
-
+renderForm();
