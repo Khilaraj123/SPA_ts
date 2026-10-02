@@ -6,7 +6,8 @@
     border-radius: 8px;
 }
 
-.deleteBtn {
-    background-color: red;
-    color: white;
+.link {
+    padding: 20px;
+    text-decoration: none;
+    color: red;
 }
