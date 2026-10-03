@@ -41,6 +41,26 @@ export function getTasks(): Task[] {
     return [...tasks];
 }
 
+export function getTaskById(id: number): Task {
+    const task = tasks.find(task => task.id === id);
+
+    if (!task) {
+        throw new Error(`Task with id ${id} was not found`);
+    }
+    return task;
+}
+
+export function toogleTasks(id: number): boolean {
+    const task = tasks.find(task => task.id === id);
+
+    if (!task) {
+        return false;
+    }
+
+    task.completed = !task.completed;
+    return true;
+}
+
 export function addTask(title: string): void {
     const newTask: Task = {
         id: generateTaskId(),

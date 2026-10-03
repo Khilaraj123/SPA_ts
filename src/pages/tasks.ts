@@ -1,15 +1,15 @@
 import { createTaskItem } from "../components/task-item";
 import { createTaskForm } from "../components/task-form";
-import { getTasks, addTask, deleteTask } from "../state/tasks";
+import { getTasks, toogleTasks, addTask, deleteTask } from "../state/tasks";
 
 export function renderTasksPage(main: HTMLElement) {
     main.innerHTML = "";
     const heading = document.createElement("h1");
     heading.textContent = "Tasks";
 
-    const taskForm = createTaskForm((title)=>{
+    const taskForm = createTaskForm((title) => {
         const trimmed = title.trim();
-        if(!trimmed) return;
+        if (!trimmed) return;
         addTask(trimmed);
         renderTasksPage(main);
     });
@@ -19,12 +19,16 @@ export function renderTasksPage(main: HTMLElement) {
 
     const tasks = getTasks();
 
-    tasks.forEach((task)=>{
+    tasks.forEach((task) => {
         taskList.appendChild(
-            createTaskItem(task, (id)=>{
+            createTaskItem(task, (id) => {
                 deleteTask(id);
                 renderTasksPage(main);
-            })
+            },
+                (id) => {
+                    toogleTasks(id);
+                    renderTasksPage(main);
+                })
         );
     });
     main.appendChild(heading);
